@@ -1,14 +1,17 @@
 <script lang="ts">
   import {
     CapacitorIcon,
+    ChaiIcon,
     CodeIgniterIcon,
     DockerIcon,
     EmailIcon,
     GithubIcon, 
     JestIcon, 
     LocationIcon,
+    MochaIcon,
     MySQLIcon,
     NextjsIcon,
+    NodejsIcon,
     PhoneIcon,
     PostgresIcon,
     PuppeteerIcon,
@@ -18,18 +21,19 @@
     StyledComponentsIcon,
     SvelteIcon,
     TypeScriptIcon,
+    UnrealIcon,
     WordPressIcon
   } from './lib/components/icons';
   import './sass/minireset.sass';
   import './sass/global.sass';
 
-  const name = 'Lucas Fernandes';
-  const role = 'Frontend Developer';
-  const bio = 'I am a curiosity-driven frontend developer with nearly 4 years of professional experience building web applications with Svelte, React, Sass and Capacitor. I also have familiarity working with Node.js, Kotlin and C#.';
+  const name = 'Doce Fernandes';
+  const role = 'Fullstack Developer';
+  const bio = 'I am a curiosity-driven fullstack developer with a focus on frontend and nearly 5 years of professional experience building web apps with Svelte, React, Sass, Node.js and Capacitor. I also do regular live coding streams on [Twitch] and occasionally write on [my blog].';
   const socials = [
     {
       icon: LocationIcon,
-      label: 'Minas Gerais, Brazil',
+      label: 'São Paulo, Brazil',
     },
     {
       icon: GithubIcon,
@@ -50,6 +54,46 @@
   ];
 
   const experience = [
+    {
+      company: 'Datawrapper',
+      role: 'Fullstack Developer',
+      date: {
+        start: 'Aug 2022',
+        end: 'Apr 2023',
+      },
+      description: [
+        'Enhanced app stability by migrating Svelte 2 to Svelte 3 components in the app charts and maps editor',
+        'Contributed to a micro frontend architecture by maintaining multiple plugins',
+        'Reduced errors by extensively testing Svelte components using Mocha and Chai'
+      ],
+      image: 'datawrapper.jpeg',
+      stack: [
+        {
+          icon: SvelteIcon,
+          label: 'Svelte',
+        },
+        {
+          icon: SassIcon,
+          label: 'Sass',
+        },
+        {
+          icon: NodejsIcon,
+          label: 'Node',
+        },
+        {
+          icon: ChaiIcon,
+          label: 'Chai'
+        },
+        {
+          icon: MochaIcon,
+          label: 'Mocha'
+        },
+        {
+          icon: DockerIcon,
+          label: 'Docker'
+        },
+      ]
+    },
     {
       company: 'Ferreri',
       role: 'Frontend Developer',
@@ -150,28 +194,15 @@
       ],
     },
     {
-      name: 'Semaninha',
-      description: 'Last.fm collage generator with the songs you listened to the most with different themes and ready to share.',
-      url: 'https://semaninha.com',
-      source: 'https://github.com/doceazedo/semaninha',
-      image: 'semaninha.jpg',
+      name: 'Fazendoca',
+      description: 'A social game about taking care of your farm, made on UE5 with a SvelteKit REST API and Prisma ORM.',
+      source: 'https://github.com/doceazedo/fazendoca-ue5',
+      image: 'fazendoca.jpg',
       stack: [
-        SvelteIcon,
+        UnrealIcon,
+        NodejsIcon,
         TypeScriptIcon,
-        PuppeteerIcon,
-        SassIcon,
         PostgresIcon,
-      ],
-    },
-    {
-      name: 'Svelte Flow',
-      description: 'This is an upcoming library for building interactive graphs and node-based editors with Svelte, inspired by React Flow.',
-      source: 'https://github.com/doceazedo/svelte-flow',
-      image: 'svelte-flow.jpg',
-      stack: [
-        SvelteIcon,
-        TypeScriptIcon,
-        SassIcon
       ],
     },
   ]
@@ -202,7 +233,10 @@
     </ul>
   </div>
   <div class="right">
-    {bio}
+    {@html bio
+      .replace('[Twitch]', '<a href="https://twitch.tv/doceazedo911">Twitch</a>')
+      .replace('[my blog]', '<a href="https://doceazedo.com">my blog</a>')
+    }
   </div>
 </div>
 
@@ -243,23 +277,25 @@
   {#each projects as project}
     <li>
       <img src="/img/{project.image}" alt="" class="screenshot">
-      <h1 class="project-title">
-        {project.name}
-        <div class="stack">
-          {#each project.stack as tech}
-            <svelte:component this={tech} />
-          {/each}
+      <div class="project-details">
+        <h1 class="project-title">
+          {project.name}
+          <div class="stack">
+            {#each project.stack as tech}
+              <svelte:component this={tech} />
+            {/each}
+          </div>
+        </h1>
+        <p class="project-description">
+          {project.description}
+        </p>
+        <div class="links">
+          {#if !!project.url}
+            <a href={project.url} target="_blank">Visit</a>
+            <span>/</span>
+          {/if}
+          <a href={project.source} target="_blank">Source code</a>
         </div>
-      </h1>
-      <p class="project-description">
-        {project.description}
-      </p>
-      <div class="links">
-        {#if !!project.url}
-          <a href={project.url} target="_blank">Visit</a>
-          <span>/</span>
-        {/if}
-        <a href={project.source} target="_blank">Source code</a>
       </div>
     </li>
   {/each}
@@ -289,6 +325,9 @@
     .right
       font-size: .9rem
       line-height: 1.35
+
+      :global(a)
+        color: inherit
 
   .socials
     display: flex
@@ -332,6 +371,7 @@
       flex-grow: 1
       height: 3px
       background-color: $primary
+      print-color-adjust: exact
 
   .work
     display: flex
@@ -345,6 +385,7 @@
       .logo
         flex-shrink: 0
         height: 50px
+        border-radius: .25rem
 
       .work-details
         display: flex
@@ -395,21 +436,23 @@
 
   .projects
     display: flex
+    justify-content: space-between
     gap: 1.5rem
 
     li
       display: flex
-      flex-direction: column
+      align-items: flex-start
       gap: .5rem
-      width: 33.3333%
+      width: 50%
 
       .screenshot
-        width: 100%
+        width: 8rem
+        aspect-ratio: 4 / 3
         border-radius: .5rem
 
       .project-title
         display: flex
-        justify-content: space-between
+        gap: .5rem
         align-items: center
         font-weight: 600
 
