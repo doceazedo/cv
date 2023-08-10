@@ -5,8 +5,8 @@
     CodeIgniterIcon,
     DockerIcon,
     EmailIcon,
-    GithubIcon, 
-    JestIcon, 
+    GithubIcon,
+    JestIcon,
     LocationIcon,
     MochaIcon,
     MySQLIcon,
@@ -17,195 +17,190 @@
     PuppeteerIcon,
     ReactIcon,
     SassIcon,
-    StorybookIcon, 
+    StorybookIcon,
     StyledComponentsIcon,
     SvelteIcon,
     TypeScriptIcon,
     UnrealIcon,
-    WordPressIcon
-  } from './lib/components/icons';
-  import './sass/minireset.sass';
-  import './sass/global.sass';
+    WordPressIcon,
+  } from "./lib/components/icons";
+  import "./sass/minireset.sass";
+  import "./sass/global.sass";
 
-  const name = 'Doce Fernandes';
-  const role = 'Fullstack Developer';
-  const bio = 'I am a curiosity-driven fullstack developer with a focus on frontend and nearly 5 years of professional experience building web apps with Svelte, React, Sass, Node.js and Capacitor. I also do regular live coding streams on [Twitch] and occasionally write on [my blog].';
+  const name = "Doce Fernandes";
+  const role = "Fullstack Developer";
+  const bio =
+    "I am a curiosity-driven fullstack developer with a focus on frontend and nearly 5 years of professional experience building web apps with Svelte, React, Sass, Node.js and Capacitor. I also do regular live coding streams on [Twitch] and occasionally write on [my blog].";
   const socials = [
     {
       icon: LocationIcon,
-      label: 'São Paulo, Brazil',
+      label: "São Paulo, Brazil",
     },
     {
       icon: GithubIcon,
-      label: 'github.com/doceazedo',
-      href: 'https://github.com/doceazedo',
-      target: '_blank'
+      label: "github.com/doceazedo",
+      href: "https://github.com/doceazedo",
+      target: "_blank",
     },
     {
       icon: EmailIcon,
-      label: 'me@doceazedo.com',
-      href: 'mailto:me@doceazedo.com'
+      label: "me@doceazedo.com",
+      href: "mailto:me@doceazedo.com",
     },
     {
       icon: PhoneIcon,
-      label: '+55 31 98869-6043',
-      href: 'tel:5531988696043'
+      label: "+55 31 98869-6043",
+      href: "tel:5531988696043",
     },
   ];
 
   const experience = [
     {
-      company: 'Datawrapper',
-      role: 'Fullstack Developer',
+      company: "Datawrapper",
+      role: "Fullstack Developer",
       date: {
-        start: 'Aug 2022',
-        end: 'Apr 2023',
+        start: "Aug 2022",
+        end: "Apr 2023",
       },
       description: [
-        'Enhanced app stability by migrating Svelte 2 to Svelte 3 components in the app charts and maps editor',
-        'Contributed to a micro frontend architecture by maintaining multiple plugins',
-        'Reduced errors by extensively testing Svelte components using Mocha and Chai'
+        "Enhanced app stability by migrating Svelte 2 to Svelte 3 components in the app charts and maps editor",
+        "Contributed to a micro frontend architecture by maintaining multiple plugins",
+        "Reduced errors by extensively testing Svelte components using Mocha and Chai",
       ],
-      image: 'datawrapper.jpeg',
+      image: "datawrapper.jpeg",
       stack: [
         {
           icon: SvelteIcon,
-          label: 'Svelte',
+          label: "Svelte",
         },
         {
           icon: SassIcon,
-          label: 'Sass',
+          label: "Sass",
         },
         {
           icon: NodejsIcon,
-          label: 'Node',
+          label: "Node",
         },
         {
           icon: ChaiIcon,
-          label: 'Chai'
+          label: "Chai",
         },
         {
           icon: MochaIcon,
-          label: 'Mocha'
+          label: "Mocha",
         },
         {
           icon: DockerIcon,
-          label: 'Docker'
+          label: "Docker",
         },
-      ]
+      ],
     },
     {
-      company: 'Ferreri',
-      role: 'Frontend Developer',
+      company: "Ferreri",
+      role: "Frontend Developer",
       date: {
-        start: 'Oct 2021',
-        end: 'Present',
+        start: "Oct 2021",
+        end: "Aug 2022",
       },
       description: [
-        'Implemented and maintained design systems with React and Storybook, organized in presentational and container components',
-        'Worked with a team of 5 developers to reduce paperwork of a insurance company',
-        'Automated code formatting and linting with GitLab CI and Git hooks',
-        'Tested React components with Jest'
+        "Implemented and maintained design systems with React and Storybook, organized in presentational and container components",
+        "Worked with a team of 5 developers to reduce paperwork of a insurance company",
+        "Automated code formatting and linting with GitLab CI and Git hooks",
+        "Tested React components with Jest",
       ],
-      image: 'ferreri.jpg',
+      image: "ferreri.jpg",
       stack: [
         {
           icon: ReactIcon,
-          label: 'React',
+          label: "React",
         },
         {
           icon: NextjsIcon,
-          label: 'Next.js',
+          label: "Next.js",
         },
         {
           icon: TypeScriptIcon,
-          label: 'TypeScript'
+          label: "TypeScript",
         },
         {
           icon: StorybookIcon,
-          label: 'Storybook'
+          label: "Storybook",
         },
         {
           icon: StyledComponentsIcon,
-          label: 'styled-components'
+          label: "styled-components",
         },
         {
           icon: JestIcon,
-          label: 'Jest'
+          label: "Jest",
         },
         {
           icon: DockerIcon,
-          label: 'Docker'
+          label: "Docker",
         },
-      ]
+      ],
     },
     {
-      company: 'WAS Software',
-      role: 'Fullstack Developer',
+      company: "WAS Software",
+      role: "Fullstack Developer",
       date: {
-        start: 'Oct 2018',
-        end: 'Sep 2021',
+        start: "Oct 2018",
+        end: "Sep 2021",
       },
       description: [
-        'Introduced Svelte to deploy a delivery app with over a month in advance of the deadline',
-        'Published a Capacitor mobile app with offline support and push notifications',
-        'Assisted in building a fully-fledged ERP with CodeIgniter 3',
+        "Introduced Svelte to deploy a delivery app with over a month in advance of the deadline",
+        "Published a Capacitor mobile app with offline support and push notifications",
+        "Assisted in building a fully-fledged ERP with CodeIgniter 3",
       ],
-      image: 'wasoftware.png',
+      image: "wasoftware.png",
       stack: [
         {
           icon: SvelteIcon,
-          label: 'Svelte',
+          label: "Svelte",
         },
         {
           icon: SassIcon,
-          label: 'Sass',
+          label: "Sass",
         },
         {
           icon: CapacitorIcon,
-          label: 'Capacitor',
+          label: "Capacitor",
         },
         {
           icon: CodeIgniterIcon,
-          label: 'CodeIgniter',
+          label: "CodeIgniter",
         },
         {
           icon: WordPressIcon,
-          label: 'WordPress',
+          label: "WordPress",
         },
         {
           icon: MySQLIcon,
-          label: 'MySQL',
+          label: "MySQL",
         },
-      ]
+      ],
     },
   ];
 
   const projects = [
     {
-      name: 'Live coding',
-      description: 'I do live coding streams regularly on Twitch, with custom commands and visuals powered by Svelte.',
-      url: 'https://twitch.tv/doceazedo911',
-      source: 'https://github.com/doceazedo/overlay',
-      image: 'overlay.jpg',
-      stack: [
-        SvelteIcon,
-        TypeScriptIcon
-      ],
+      name: "Live coding",
+      description:
+        "I do live coding streams regularly on Twitch, with custom commands and visuals powered by Svelte.",
+      url: "https://twitch.tv/doceazedo911",
+      source: "https://github.com/doceazedo/overlay",
+      image: "overlay.jpg",
+      stack: [SvelteIcon, TypeScriptIcon],
     },
     {
-      name: 'Fazendoca',
-      description: 'A social game about taking care of your farm, made on UE5 with a SvelteKit REST API and Prisma ORM.',
-      source: 'https://github.com/doceazedo/fazendoca-ue5',
-      image: 'fazendoca.jpg',
-      stack: [
-        UnrealIcon,
-        NodejsIcon,
-        TypeScriptIcon,
-        PostgresIcon,
-      ],
+      name: "Fazendoca",
+      description:
+        "A social game about taking care of your farm, made on UE5 with a SvelteKit REST API and Prisma ORM.",
+      source: "https://github.com/doceazedo/fazendoca-ue5",
+      image: "fazendoca.jpg",
+      stack: [UnrealIcon, NodejsIcon, TypeScriptIcon, PostgresIcon],
     },
-  ]
+  ];
 </script>
 
 <h1 class="name">{name}</h1>
@@ -234,9 +229,11 @@
   </div>
   <div class="right">
     {@html bio
-      .replace('[Twitch]', '<a href="https://twitch.tv/doceazedo911">Twitch</a>')
-      .replace('[my blog]', '<a href="https://doceazedo.com">my blog</a>')
-    }
+      .replace(
+        "[Twitch]",
+        '<a href="https://twitch.tv/doceazedo911">Twitch</a>'
+      )
+      .replace("[my blog]", '<a href="https://doceazedo.com">my blog</a>')}
   </div>
 </div>
 
@@ -262,7 +259,8 @@
         <ul class="stack">
           {#each work.stack as tech}
             <li>
-              <svelte:component this={tech.icon} /> {tech.label}
+              <svelte:component this={tech.icon} />
+              {tech.label}
             </li>
           {/each}
         </ul>
@@ -276,7 +274,7 @@
 <ul class="projects">
   {#each projects as project}
     <li>
-      <img src="/img/{project.image}" alt="" class="screenshot">
+      <img src="/img/{project.image}" alt="" class="screenshot" />
       <div class="project-details">
         <h1 class="project-title">
           {project.name}
